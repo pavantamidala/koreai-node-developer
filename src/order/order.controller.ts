@@ -11,6 +11,7 @@ import { OrderService } from './order.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
 import { UpdateStatusDto } from './dto/update-status.dto';
+import { DateDto } from './dto/date-dto';
 
 @Controller('order')
 export class OrderController {
@@ -26,9 +27,9 @@ export class OrderController {
     return this.orderService.findAll();
   }
 
-  @Get('checkCapacity')
-  checkCapacity() {
-    return this.orderService.checkCapacity();
+  @Post('checkCapacity')
+  checkCapacity(@Body() dateDto: DateDto) {
+    return this.orderService.checkCapacity(dateDto);
   }
 
   @Get(':id')

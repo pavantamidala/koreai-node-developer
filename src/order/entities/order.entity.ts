@@ -22,6 +22,8 @@ export class Order {
   contactNumber: number;
   @Column()
   status: string;
+  @Column({ default: '06-08-2022' })
+  orderedDate: string;
 
   @AfterInsert()
   insert() {

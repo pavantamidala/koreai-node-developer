@@ -18,4 +18,7 @@ export class CreateOrderDto {
   @ApiProperty()
   @IsString()
   status: string;
+  @ApiProperty()
+  @IsString()
+  orderedDate: string;
 }

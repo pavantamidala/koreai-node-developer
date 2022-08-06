@@ -25,4 +25,8 @@ export class UpdateOrderDto extends PartialType(CreateOrderDto) {
   @ApiProperty()
   @IsString()
   status: string;
+  @ApiProperty()
+  @IsOptional()
+  @IsString()
+  orderedDate: string;
 }
